@@ -43,6 +43,7 @@ import time
 import xml.dom.minidom
 import datetime
 import zlib
+import _locale
 
 from optparse import Option, OptionParser, OptionValueError
 from string import Template
@@ -2357,6 +2358,7 @@ if options.root is not None:
 else:
     root_dir = starting_dir
 
+_locale._getdefaultlocale = (lambda *args: ['en_US', options.html_encoding])
 
 #
 # Setup filters
